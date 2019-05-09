@@ -107,6 +107,7 @@ public class EarthquakeCityMap extends PApplet {
 		
 		Object magObj = feature.getProperty("magnitude");
 		float mag = Float.parseFloat(magObj.toString());
+		//int mag = (int) Float.parseFloat(magObj.toString());
 		
 		// Here is an example of how to use Processing's color method to generate 
 	    // an int that represents the color yellow.  
@@ -124,21 +125,37 @@ public class EarthquakeCityMap extends PApplet {
 	    int black = color(255, 255, 255);
 	    int red = color(255, 0, 0);
 	    
-//	    if ((int) marker.getProperty("year") >= 2010) {
+//	    switch(mag) {
+//	    
+//	    case 0:
 //	    	marker.setColor(red);
-//	    }
 //	    
-//	    if ((int) marker.getProperty("year") < 2010 && (int) marker.getProperty("year") >= 1990) {
+//	    case 3:
 //	    	marker.setColor(yellow);
-//	    }
 //	    
-//	    if ((int) marker.getProperty("year") < 1990 && (int) marker.getProperty("year") >= 1950) {
+//	    case 2:
 //	    	marker.setColor(gray);
-//	    }
 //	    
-//	    if ((int) marker.getProperty("year") < 1950) {
+//	    case 1:
 //	    	marker.setColor(black);
+//	    break;
 //	    }
+	    
+	    if (mag >= 4.0) {
+	    	marker.setColor(red);
+	    }
+	    
+	    else if (mag < 4.0 && mag >= 3.0) {
+	    	marker.setColor(yellow);
+	    }
+	    
+	    else if (mag < 3.0 && mag >= 2.0) {
+	    	marker.setColor(gray);
+	    }
+	    
+	    else if (mag < 2.0) {
+	    	marker.setColor(black);
+	    }
 	    
 	    
 	    // Finally return the marker
