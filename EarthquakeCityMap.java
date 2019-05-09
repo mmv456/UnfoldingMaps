@@ -77,6 +77,9 @@ public class EarthquakeCityMap extends PApplet {
 	    // to create a new SimplePointMarker for each PointFeature in 
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
+	    for (PointFeature quake: earthquakes) {
+	    	markers.add(createMarker(quake));
+	    }
 	    
 	    
 	    // Add the markers to the map so that they are displayed
@@ -100,7 +103,7 @@ public class EarthquakeCityMap extends PApplet {
 		//System.out.println(feature.getProperties());
 		
 		// Create a new SimplePointMarker at the location given by the PointFeature
-		SimplePointMarker marker = new SimplePointMarker(feature.getLocation());
+		SimplePointMarker marker = new SimplePointMarker(feature.getLocation(), feature.getProperties());
 		
 		Object magObj = feature.getProperty("magnitude");
 		float mag = Float.parseFloat(magObj.toString());
@@ -116,6 +119,26 @@ public class EarthquakeCityMap extends PApplet {
 	    // Rather than comparing the magnitude to a number directly, compare 
 	    // the magnitude to these variables (and change their value in the code 
 	    // above if you want to change what you mean by "moderate" and "light")
+	    
+	    int gray = color(125, 125, 125);
+	    int black = color(255, 255, 255);
+	    int red = color(255, 0, 0);
+	    
+//	    if ((int) marker.getProperty("year") >= 2010) {
+//	    	marker.setColor(red);
+//	    }
+//	    
+//	    if ((int) marker.getProperty("year") < 2010 && (int) marker.getProperty("year") >= 1990) {
+//	    	marker.setColor(yellow);
+//	    }
+//	    
+//	    if ((int) marker.getProperty("year") < 1990 && (int) marker.getProperty("year") >= 1950) {
+//	    	marker.setColor(gray);
+//	    }
+//	    
+//	    if ((int) marker.getProperty("year") < 1950) {
+//	    	marker.setColor(black);
+//	    }
 	    
 	    
 	    // Finally return the marker
