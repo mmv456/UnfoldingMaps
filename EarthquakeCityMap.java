@@ -51,14 +51,14 @@ public class EarthquakeCityMap extends PApplet {
 
 	
 	public void setup() {
-		size(950, 600, OPENGL);
+		size(1500, 600, OPENGL);
 
 		if (offline) {
-		    map = new UnfoldingMap(this, 200, 50, 700, 500, new MBTilesMapProvider(mbTilesString));
+		    map = new UnfoldingMap(this, 400, 50, 1100, 500, new MBTilesMapProvider(mbTilesString));
 		    earthquakesURL = "2.5_week.atom"; 	// Same feed, saved Aug 7, 2015, for working offline
 		}
 		else {
-			map = new UnfoldingMap(this, 200, 50, 700, 500, new Google.GoogleMapProvider());
+			map = new UnfoldingMap(this, 400, 50, 1100, 500, new Google.GoogleMapProvider());
 			// IF YOU WANT TO TEST WITH A LOCAL FILE, uncomment the next line
 			//earthquakesURL = "2.5_week.atom";
 		}
@@ -179,23 +179,48 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// White space for key
 		PShape s;
-		s = createShape(RECT, 10, 50, 190, 400);
+		s = createShape(RECT, 10, 50, 400, 400);
 		shape(s, 0, 0);
+		fill(255, 255, 255);
 		
 		
 		// Text for Key Title
 		textSize(32);
 		text("Key", 30, 30);
-		fill(255, 255, 255);
+		
 		
 		// Text for Map Title
 		textSize(32);
 		text("Map", 400, 30);
-		fill(255, 255, 255);
+		//fill(255, 255, 255);
 		
 		// Text for key
 		
+		String t = "Magnitude > 4.0";
+		String u = "Magnitude between 3.0 and 4.0";
+		String v = "Magnitude between 2.0 and 3.0";
+		String w = "Magnitude < 2.0";
+		textSize(20);
+		text(t, 30, 100);
+		text(u, 30, 150);
+		text(v, 30, 200);
+		text(w, 30, 250);
+		fill(50);
 		
+		// Shapes of circles
+		
+		
+//		textSize(10);
+//		text("Magnitude between 3.0 and 4.0", 30, 150);
+//		//fill(50);
+//		
+//		textSize(10);
+//		text("Magnitude between 2.0 and 3.0", 30, 200);
+//		//fill(50);
+//		
+//		textSize(10);
+//		text("Magnitude < 2.0", 30, 250);
+//		//fill(50);
 		
 	}
 }
