@@ -122,7 +122,7 @@ public class EarthquakeCityMap extends PApplet {
 	    // above if you want to change what you mean by "moderate" and "light")
 	    
 	    int gray = color(125, 125, 125);
-	    int black = color(255, 255, 255);
+	    int black = color(0, 0, 0);
 	    int red = color(255, 0, 0);
 	    
 //	    switch(mag) {
@@ -178,10 +178,11 @@ public class EarthquakeCityMap extends PApplet {
 		// Remember you can use Processing's graphics methods here
 		
 		// White space for key
+		fill(color(0, 150, 255)); // color for gray
 		PShape s;
 		s = createShape(RECT, 10, 50, 400, 400);
 		shape(s, 0, 0);
-		fill(255, 255, 255);
+		fill(255, 255, 255); // color for white
 		
 		
 		// Text for Key Title
@@ -191,7 +192,7 @@ public class EarthquakeCityMap extends PApplet {
 		
 		// Text for Map Title
 		textSize(32);
-		text("Map", 400, 30);
+		text("Map", 500, 30);
 		//fill(255, 255, 255);
 		
 		// Text for key
@@ -201,13 +202,37 @@ public class EarthquakeCityMap extends PApplet {
 		String v = "Magnitude between 2.0 and 3.0";
 		String w = "Magnitude < 2.0";
 		textSize(20);
-		text(t, 30, 100);
-		text(u, 30, 150);
-		text(v, 30, 200);
-		text(w, 30, 250);
-		fill(50);
+		text(t, 50, 100);
+		text(u, 50, 150);
+		text(v, 50, 200);
+		text(w, 50, 250);
+		//fill(50);
 		
 		// Shapes of circles
+		
+		// color for red
+		fill(color(255, 0, 0));
+		PShape one;
+		one = createShape(ELLIPSE, 30, 85, 15, 15);
+		shape(one, 0, 0);
+		
+		// color for yellow
+		fill(color(255, 255, 0));
+		PShape two;
+		two = createShape(ELLIPSE, 30, 135, 15, 15);
+		shape(two, 0, 0);
+		
+		// color for gray
+		fill(color(125, 125, 125));
+		PShape three;
+		three = createShape(ELLIPSE, 30, 185, 15, 15);
+		shape(three, 0, 0);
+		
+		// color for black
+		fill(color(0, 0, 0));
+		PShape four;
+		four = createShape(ELLIPSE, 30, 235, 15, 15);
+		shape(four, 0, 0);
 		
 		
 //		textSize(10);
