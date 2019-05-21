@@ -141,13 +141,17 @@ public class EarthquakeCityMap extends PApplet {
 		textSize(12);
 		text("Earthquake Key", 50, 75);
 		
-		fill(color(255, 0, 0));
+		fill(color(255, 0, 0));      //for the city marker, which is red
 		//ellipse(50, 125, 15, 15);
 		triangle(45, 130, 50, 120, 55, 130);
 		//fill(color(255, 255, 0));
 		//ellipse(50, 175, 10, 10);
 		//fill(color(0, 0, 255));
 		//ellipse(50, 225, 5, 5);
+		fill(color(255, 255, 255));    //for the landquake, which is white
+		ellipse(50, 175, 10, 10);
+		fill(color(255, 255, 255));      //for the oceanquake, which is white
+		rect(50, 225, 10, 10);
 		
 		fill(0, 0, 0);
 		text("CityMarker", 75, 125);

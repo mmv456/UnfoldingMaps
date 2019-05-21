@@ -48,7 +48,6 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 	{
 		super(feature.getLocation());
 		// Add a radius property and then set the properties
-		radius = THRESHOLD_MODERATE;
 		java.util.HashMap<String, Object> properties = feature.getProperties();
 		float magnitude = Float.parseFloat(properties.get("magnitude").toString());
 		properties.put("radius", 2*magnitude );
