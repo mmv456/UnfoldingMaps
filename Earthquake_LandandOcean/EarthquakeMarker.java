@@ -69,6 +69,26 @@ public abstract class EarthquakeMarker extends SimplePointMarker
 		
 		// OPTIONAL TODO: draw X over marker if within past day		
 		
+		  if (this.getProperty("age").equals("Past Day")) {
+		  
+		  float m = this.getMagnitude();
+		  
+		  if (this instanceof OceanQuakeMarker) {
+			  pg.line(x, y, x+(3*m), y+(3*m));
+			  pg.line(x, y+(3*m), x+(3*m), y);
+			  
+		  }
+		  else {
+			  pg.line(x-m, y-m, x+m, y+m);
+			  pg.line(x-m, y+m, x+m, y-m);
+		  }
+		  
+		  
+		  }
+		 
+		
+		
+		
 		// reset to previous styling
 		pg.popStyle();
 		
